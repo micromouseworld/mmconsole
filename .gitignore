@@ -1,4 +1,5 @@
 dist/
+docs/build/
 pycache/
 .cache/
 .pytest_cache/
