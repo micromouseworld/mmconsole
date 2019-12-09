@@ -1,11 +1,11 @@
-import os
 import cmd
+import os
 import pickle
 from pprint import pprint
 from traceback import print_exc
 
-from bluetooth import BluetoothSocket
 from bluetooth import RFCOMM
+from bluetooth import BluetoothSocket
 from bluetooth.btcommon import BluetoothError
 from osbrain import Agent
 from osbrain import run_agent
@@ -87,8 +87,8 @@ class Proxy(Agent):
                 raise
         return 0
 
-    def tail(self, N):
-        return self.log[-N:]
+    def tail(self, n):
+        return self.log[-n:]
 
     def get_battery_voltage(self):
         self.interface.send("battery\0")
@@ -168,7 +168,7 @@ class Console(cmd.Cmd):
         """Exit shell."""
         return True
 
-    def do_EOF(self, line):
+    def do_EOF(self, line):  # noqa: N802
         """Exit shell."""
         return True
 
